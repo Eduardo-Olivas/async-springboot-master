@@ -1,0 +1,45 @@
+
+CREATE TABLE Countries (
+  ID    int primary key,
+  Name  varchar(20) not null,
+  Capital varchar(100),
+  Population int,
+  LanguageID int
+);
+
+insert into Countries values(1,'Mexico', 'Mexico City',128932753,1);
+insert into Countries values(2,'Taiwan', 'Taipei',23503349,2);
+
+select * from Countries;
+
+CREATE TABLE Languages (
+  ID    int  primary key,
+  Name  varchar(20) not null
+);
+
+insert into Languages values(1,'Spanish');
+insert into Languages values(2,'Chinese');
+
+select * from Languages;
+
+UPDATE Countries
+SET Population = 250000
+WHERE ID = 1;
+
+select * from Countries;
+
+DELETE FROM Countries WHERE Population>100000;
+
+select * from Countries;
+
+SELECT Countries.Name,Languages.Name as Lenguaje
+FROM Languages
+INNER JOIN Countries ON Countries.LanguageID=Languages.ID;
+
+
+SELECT COUNT(LanguageID) as Lenguajes, Name
+FROM Countries
+GROUP BY Name;
+
+
+commit;
