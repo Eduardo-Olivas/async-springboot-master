@@ -1,0 +1,9 @@
+
+[2021-12-21 15:55:14] [ INFO ] [AsyncSpringBootApplication:17] main ::
+[2021-12-21 15:55:24] [ INFO ] [NotificationController:76] update ::
+[2021-12-21 15:55:24] [ INFO ] [AsyncConfig:24] getAsyncExecutor ::
+[2021-12-21 15:55:24] [ INFO ] [NotificationController:89] update successfully!!! http-nio-8085-exec-2
+[2021-12-21 15:55:26] [ INFO ] [NotificationService:31] ID: 1 Name: Mexico Capital: test Population: 12 LanguageID: 2
+[2021-12-21 15:55:26] [ INFO ] [NotificationService:33] called 3rd party to send text message : Async-example-thread-1
+[2021-12-21 15:55:26] [ INFO ] [AsyncExceptionHandler:18] handleUncaughtException ::
+[2021-12-21 15:55:26] [ INFO ] [AsyncExceptionHandler:20] Method NamesendInsertMessages---[1, Mexico, test, 12, 2]----error Message: / by zero
