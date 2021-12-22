@@ -1,0 +1,41 @@
+Create PROCEDURE CRUD_Countries 
+(@ID INT,
+@Name VARCHAR(10),
+@Capital VARCHAR(10),
+@Population INT,
+@LanguageID VARCHAR(20))
+AS
+  BEGIN
+      IF @StatementType = 'Insert'
+        BEGIN
+            INSERT INTO (Name,
+                         Capital,
+                         Population,
+						 LanguageID
+                         )
+            VALUES     ( @Name,
+                         @Capital,
+                         @Population,
+                         @LanguageID)
+        END
+
+      IF @StatementType = 'Select'
+        BEGIN
+            SELECT * FROM Countries
+        END
+
+      IF @StatementType = 'Update'
+        BEGIN
+            UPDATE Countries
+            SET    Name = @Name,
+                   Capital = @Capital,
+                   Population = @Population,
+                   LanguageID = @LanguageID
+            WHERE  ID = @ID
+        END
+      ELSE IF @StatementType = 'Delete'
+        BEGIN
+            DELETE FROM Countries
+            WHERE ID = @ID
+        END
+  END
